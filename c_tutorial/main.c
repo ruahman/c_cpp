@@ -1,5 +1,6 @@
-#include <stdio.h>
+#include "variables.h"
+
 int main() {
-    printf("hello world\n");
+    variables_demo();
     return 0;
 }
