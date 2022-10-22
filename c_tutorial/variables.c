@@ -13,18 +13,18 @@ void variables_demo(){
   printf("gpa: %f\n", gpa);
   printf("grade: %c\n", grade);
   printf("\n%f\n",floor(3.2));
-  /* printf("\n%f",sqrt(16)); */
-  /* printf("\n%f",pow(2,4)); */
-  /* double x = sqrt(36); */
-  /* printf("%f",x); */
+  printf("\n%f",sqrt(16));
+  printf("\n%f",pow(2,4));
+  double x = sqrt(36);
+  printf("%f",x);
   const int num = 312;
   printf("%d\n",num);
 
-  int age;
-  printf("Enter your age: ");
-  scanf("%d", &age);
-  printf("%d",age);
-  char name[20];
+  /* int age; */
+  /* printf("Enter your age: "); */
+  /* scanf("%d", &age); */
+  /* printf("%d",age); */
+  /* char name[20]; */
   /* fgets(name); */
   /* printf("\nname: %s", name); */
 }
