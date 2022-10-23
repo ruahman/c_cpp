@@ -40,6 +40,6 @@ run:
 # not linked to an output file
 .PHONY: clean build run
 
-# include dependencies
+# clang -MD create make file rules to include to map .h to .c
 -include $(DEPFILES)
 
