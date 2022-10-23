@@ -1,15 +1,20 @@
 CC = clang
 INCDIRS = . ./includes/
-CODEDIRS = . ./lib
+CODEDIRS = . lib
+OPT = -O0
+# generate files that encode make rules for the .h dependencies
 DEPFLAGS = -MP -MD
-CFLAGS = $(foreach D, $(INCDIRS), -I$(D)) $(DEPFLAGS) -c -Wall -g 
+# automatically add the -I onto each include directory
+CFLAGS = -Wall -g $(foreach D, $(INCDIRS), -I$(D)) $(DEPFLAGS) $(OPT)
+# libaries that out app uses
 LIBS = -l m
+# get each *.c from CODEDIRS
 CFILES = $(foreach D, $(CODEDIRS), $(wildcard $(D)/*.c))
+# create obj files from CFILES
 OBJS = $(patsubst %.c, %.o, $(CFILES))
-
-# if a .d file is changes then so is .c file
-# tells make to check the .d file with the .c file
+# create .d files from CFILES
 DEPFILES = $(patsubst %.c, %.d, $(CFILES)) 
+# executablle we are creating
 EXE = c_tutorial
 
 all: build run
@@ -24,7 +29,7 @@ $(EXE): $(OBJS)
 # object files
 # @:target, <:dependency just the .c
 %.o:%.c
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	rm -f $(EXE) $(OBJS) $(DEPFILES)
@@ -35,5 +40,6 @@ run:
 # not linked to an output file
 .PHONY: clean build run
 
-
+# include dependencies
+-include $(DEPFILES)
 

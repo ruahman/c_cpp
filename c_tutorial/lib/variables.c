@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "variables.h"
 
 void variables_demo(){
   printf("***** variable demo *****\n");
@@ -19,7 +20,8 @@ void variables_demo(){
   printf("%f",x);
   const int num = 312;
   printf("%d\n",num);
-
+  int test = TEST;
+  printf("%d\n",test);
   /* int age; */
   /* printf("Enter your age: "); */
   /* scanf("%d", &age); */
