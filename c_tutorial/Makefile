@@ -28,6 +28,8 @@ $(EXE): $(OBJS)
 
 # object files
 # @:target, <:dependency just the .c
+# $< is the first prerequisite
+# $^ is all the prerequisites
 %.o:%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
