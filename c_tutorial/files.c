@@ -5,7 +5,7 @@ void files_demo(){
   /* FILE * fpointer = fopen("employees.txt", "w"); */
   FILE * fpointer = fopen("employees.txt", "a");
 
-  fprintf(fpointer, "foobar\n");
+  fprintf(fpointer, "***fooooobar+++\n");
 
   fclose(fpointer);
 
