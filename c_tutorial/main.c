@@ -1,11 +1,12 @@
-#include "variables.h"
-#include "arrays.h"
-#include "functions.h"
-#include "conditions.h"
-#include "struct.h"
-#include "loops.h"
-#include "pointers.h"
-#include "files.h"
+#include "includes/variables.h"
+#include "includes/arrays.h"
+#include "includes/functions.h"
+#include "includes/conditions.h"
+#include "includes/struct.h"
+#include "includes/loops.h"
+#include "includes/pointers.h"
+#include "includes/files.h"
+#include "includes/io.h"
 
 int main() {
     variables_demo();
@@ -16,6 +17,7 @@ int main() {
     loops_demo();
     pointers_demo();
     files_demo();
+    io_demo();
 
     return 0;
 }
