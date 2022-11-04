@@ -1,13 +1,12 @@
-#include "variables.h"
 #include "arrays.h"
-#include "functions.h"
+#include "classes.h"
 #include "conditions.h"
+#include "functions.h"
 #include "loops.h"
 #include "pointer.h"
-#include "classes.h"
+#include "variables.h"
 
-int main()
-{
+int main() {
   variables_demo();
   arrays_demo();
   functions_demo();
