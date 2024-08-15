@@ -1,4 +1,3 @@
-
 SOURCES = $(wildcard *.c)
 OBJECTS = $(SOURCES:.c=.o)
 DEPENDENCIES = $(SOURCES:.c=.d)
@@ -23,8 +22,8 @@ $(TARGETS): % : %.o
 %.o:%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-# Include the dependency files for each source file
-# that way we can rebuild the object files if the headers change
+# Include the dependency files that GCC generated for each source file
+# that way we can rebuild the object files if the header file changes
 -include $(DEPENDENCIES)
 
 # Clean up generated files
