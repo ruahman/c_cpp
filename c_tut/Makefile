@@ -9,9 +9,17 @@ CFLAGS=-Wall -g -MMD
 
 all: $(TARGETS)
 
+# create all targets
+# $@ is the target 
+# $< is the first dependency 
+# $^ is all the dependencies
 $(TARGETS): % : %.o 
-	$(CC) $^ -o $@
+	$(CC) $< -o $@
 
+# create object files
+# $@ is the target 
+# $< is the first dependency 
+# $^ is all the dependencies
 %.o:%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
