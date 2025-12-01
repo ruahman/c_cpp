@@ -1,0 +1,13 @@
+
+cmake:
+  -mkdir build;
+  cd build && cmake ..;
+
+build:
+  cd build && make;
+
+assembly file:
+  gcc -S {{file}};
+
+clean:
+  rm -rf build
